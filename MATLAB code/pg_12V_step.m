@@ -6,8 +6,8 @@ mbattery = 0.432;
 m_motor = 0.458;
 Mw = 0.106; % mass of wheel
 Mbody = 2.243-(2*(m_motor+Mw)); % mass of robot(including battery) excluding wheel and motor
-Ke = 0.118;%0.0189; %back emf constant
-Rm = 8;%0.061; %terminal resistance
+Ke = 0.118; %back emf constant
+Rm = 5.6; %terminal resistance
 wheeldia = 0.100;
 rw = wheeldia/2; %radius of wheel
 Kb = Ke^2/(Rm*rw); % back emf related something
@@ -37,23 +37,15 @@ D =0;
 sys=ss(A,B,C,D);
 systf=tf(sys)
 
-ki =740.048;
-kp=0.1 +(19.1404+1.273*ki)/1.5441;
-%kd = 0.00+ (19.1404-1.5441*kp+1.273*ki)/(1.6205*kp - 95.0294);
-kd =0;
+ki =749.905;
+kp=0.1 +(27.2684+1.819*ki)/3.1523;
+kd=0;
 
 den = [1 0];
 num = [kd kp ki];
 controller_tf = tf(num,den);
-
 full_tf = systf * controller_tf;
-
 closedloop_tf = feedback(full_tf,1);
-kp
-kd
 
 stepplot(closedloop_tf)
-%figure;
-%rlocus(systf)
-
-%sisotool(systf)
+sisotool(systf)
