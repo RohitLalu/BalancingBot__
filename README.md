@@ -15,13 +15,21 @@ vrable solutions in environments where traditional four wheeled designs fall
 short.
 
 ## Objective
-• Derive the non linear mathematical model of the two wheeled self
+• To derive the non linear mathematical model of the two wheeled self
 balancing robot.
-• Linearize the system dynamics around the upright equilibrium about
+
+• To linearize the system dynamics around the upright equilibrium about
 0° tilt angle.
-• Design and tune a PID controller based on the linearized model.
-• Validate system behaviour through simulation in MATLAB.
-• Integrate IR based path following functionality into the balancing
+
+• To design and tune a PID controller based on the linearized model.
+
+• To validate system behaviour through simulation in MATLAB.
+
+• To integrate IR based path following functionality into the balancing
 platform.
 
+
+![Robot](iso_.jpeg)
+
+![Path Follower](pf_front.jpeg)
 
